@@ -1,5 +1,7 @@
 package com.example.jerrytang.wealthmanager;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +28,23 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        Button plan = (Button)findViewById(R.id.wm_do_plan);
+        plan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                EditText wealthText = (EditText) findViewById(R.id.wm_total_wealth);
+                String wealthValue = wealthText.getText().toString();
+                Intent intent = new Intent();
+                intent.putExtra("wealth_value", Long.valueOf(wealthValue).longValue());
+
+                ComponentName planActivity = new ComponentName("com.example.jerrytang.wealthmanager", "com.example.jerrytang.wealthmanager.PlanActivity");
+                intent.setComponent(planActivity);
+                intent.setAction("android.intent.action.MAIN");
+                startActivityForResult(intent, RESULT_OK);
+                MainActivity.this.finish();
             }
         });
     }

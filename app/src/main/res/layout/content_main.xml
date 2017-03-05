@@ -24,7 +24,6 @@
         android:layout_width="120dp"
         android:layout_height="@android:dimen/app_icon_size"
         style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:singleLine="true"
         android:textAlignment="textStart"
         android:enabled="true"
         android:inputType="number"
@@ -38,11 +37,13 @@
         android:layout_marginTop="64dp"
         android:layout_width="wrap_content"
         android:onClick="resetWealth"/>
+
     <Button
-        android:layout_height="?android:attr/windowTitleSize"
-        android:text="做计划"
-        android:visibility="visible"
-        android:layout_marginTop="64dp"
+        android:id="@+id/wm_do_plan"
         android:layout_width="wrap_content"
-        android:layout_marginLeft="110dp" />
+        android:layout_height="?android:attr/windowTitleSize"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="64dp"
+        android:text="做计划"
+        android:visibility="visible" />
 </RelativeLayout>
