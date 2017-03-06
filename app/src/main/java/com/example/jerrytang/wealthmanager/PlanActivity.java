@@ -48,7 +48,7 @@ public class PlanActivity extends AppCompatActivity {
         String content = textView.getText().toString();
 
         String valueOfItem = String.valueOf(wealthValue * (index * 0.1));
-        content = content + valueOfItem.substring(0, (valueOfItem.length() > valueOfItem.lastIndexOf(".") + 2) ? valueOfItem.lastIndexOf(".") + 2 : valueOfItem.length() -1);
+        content = content + valueOfItem.substring(0, (valueOfItem.lastIndexOf(".") > 0) ? valueOfItem.lastIndexOf(".") : valueOfItem.length() -1);
         textView.setText(content);
     }
 

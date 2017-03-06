@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.setComponent(planActivity);
                 intent.setAction("android.intent.action.MAIN");
                 startActivityForResult(intent, RESULT_OK);
-                MainActivity.this.finish();
+                //MainActivity.this.finish();
             }
         });
     }
